@@ -6,6 +6,7 @@ import Image from "next/image";
 export default function Navbar() {
   return (
     <nav
+      // className="fixed top-0 left-0 right-0 py-16 px-10 md:px-5 "
       style={{
         position: "fixed",
         top: 0,
@@ -15,13 +16,14 @@ export default function Navbar() {
         display: "flex",
         alignItems: "center",
         justifyContent: "space-between",
-        padding: "1.2rem 4rem",
+        padding: "1.2rem 2rem",
         background: "rgba(20,17,26,0.85)",
         backdropFilter: "blur(16px)",
         borderBottom: "1px solid var(--border)",
       }}
     >
       <Link
+        className="flex items-center"
         href="/"
         style={{
           fontFamily: "var(--font-display)",
@@ -43,11 +45,10 @@ export default function Navbar() {
       </Link>
 
       <ul
+        className="hidden md:flex items-center"
         style={{
-          display: "flex",
           gap: "2.5rem",
           listStyle: "none",
-          alignItems: "center",
         }}
       >
         {[

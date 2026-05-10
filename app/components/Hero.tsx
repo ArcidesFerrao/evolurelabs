@@ -185,7 +185,7 @@ export default function Hero() {
         className="animate-fadeup-slow"
         style={{
           position: "absolute",
-          bottom: "2.5rem",
+          bottom: "1.5rem",
           left: "50%",
           transform: "translateX(-50%)",
           display: "flex",

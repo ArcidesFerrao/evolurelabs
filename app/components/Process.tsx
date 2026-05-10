@@ -77,10 +77,8 @@ export default function Process() {
 
         <div
           ref={stepsRef}
-          className="reveal"
+          className="reveal grid grid-cols-2 md:grid-cols-4"
           style={{
-            display: "grid",
-            gridTemplateColumns: "repeat(4, 1fr)",
             gap: "1.5px",
             marginTop: "4rem",
           }}

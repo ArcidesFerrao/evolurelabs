@@ -18,10 +18,8 @@ export default function Stats() {
       <div style={{ maxWidth: 1100, margin: "0 auto" }}>
         <div
           ref={ref}
-          className="reveal"
+          className="reveal grid grid-cols-1 md:grid-cols-3"
           style={{
-            display: "grid",
-            gridTemplateColumns: "repeat(3, 1fr)",
             gap: "1px",
             background: "var(--border)",
             border: "1px solid var(--border)",

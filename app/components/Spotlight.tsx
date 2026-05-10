@@ -46,9 +46,8 @@ export default function Spotlight() {
           />
 
           <div
+            className="grid grid-cols-1 md:grid-cols-2"
             style={{
-              display: "grid",
-              gridTemplateColumns: "1fr 1fr",
               gap: "4rem",
               alignItems: "center",
             }}
@@ -215,6 +214,7 @@ export default function Spotlight() {
 
             {/* Right: mock */}
             <div
+              className="hidden md:block"
               style={{
                 background: "#0d0b12",
                 border: "1px solid var(--border)",
