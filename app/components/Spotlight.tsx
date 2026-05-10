@@ -15,7 +15,12 @@ export default function Spotlight() {
   return (
     <section
       id="produto"
-      style={{ padding: "2rem 2rem 6rem", position: "relative", zIndex: 1 }}
+      // className="p-2 md:p-5"
+      style={{
+        padding: "2rem 2rem 6rem",
+        position: "relative",
+        zIndex: 1,
+      }}
     >
       <div style={{ maxWidth: 1100, margin: "0 auto" }}>
         <div
@@ -25,7 +30,7 @@ export default function Spotlight() {
             background: "var(--admin-card)",
             border: "1px solid var(--border)",
             borderRadius: 20,
-            padding: "4rem",
+            padding: "2rem",
             position: "relative",
             overflow: "hidden",
           }}

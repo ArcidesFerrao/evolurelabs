@@ -67,7 +67,7 @@ export default function Hero() {
       <h1
         className="animate-fadeup-1"
         style={{
-          fontSize: "clamp(3rem, 7vw, 5.5rem)",
+          fontSize: "clamp(2rem, 7vw, 5.5rem)",
           fontWeight: 800,
           lineHeight: 1.05,
           letterSpacing: "-0.03em",
@@ -109,7 +109,9 @@ export default function Hero() {
         }}
       >
         <a
-          href="#produto"
+          href="https://contela.evolurelabs.com"
+          target="_blank"
+          rel="noopener noreferrer"
           style={{
             background: "var(--accent)",
             color: "#04342c",
