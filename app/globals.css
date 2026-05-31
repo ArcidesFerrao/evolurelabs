@@ -2,9 +2,9 @@
 
 :root {
   --background: #14111a;
-  --admin-card: #15151aea;
+  --admin-card: rgba(21, 21, 26, 0.9);
   --foreground: #f4f5fa;
-  --dash-bg: #4e475f70;
+  --dash-bg: rgba(78, 71, 95, 0.44);
   --accent: #1d9e75;
   --accent-dim: #0f6e56;
   --accent-glow: rgba(29, 158, 117, 0.18);
