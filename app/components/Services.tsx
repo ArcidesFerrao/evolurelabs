@@ -140,7 +140,7 @@ export default function Services() {
         <div
           style={{
             display: "grid",
-            gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))",
+            gridTemplateColumns: "repeat(auto-fit, minmax(366px, 1fr))",
             gap: "1.5px",
             marginTop: "4rem",
             border: "1.5px solid var(--border)",

@@ -302,7 +302,7 @@ export default function Hero() {
         <h1
           className="animate-fadeup-1"
           style={{
-            fontSize: "clamp(2.4rem, 5.5vw, 5rem)",
+            fontSize: "clamp(2.2rem, 5.5vw, 4rem)",
             fontWeight: 800,
             lineHeight: 1.06,
             letterSpacing: "-0.03em",
@@ -470,7 +470,7 @@ export default function Hero() {
       </div>
 
       {/* Scroll hint */}
-      <div
+      {/* <div
         className="animate-fadeup-slow"
         style={{
           position: "absolute",
@@ -497,7 +497,7 @@ export default function Hero() {
               "linear-gradient(to bottom, var(--accent), transparent)",
           }}
         />
-      </div>
+      </div> */}
     </header>
   );
 }
