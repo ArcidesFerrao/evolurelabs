@@ -51,20 +51,20 @@ const PRODUCTS = [
   },
   {
     id: "theject",
-    badge: "Gestão de Projectos",
+    badge: "Marketplace de Projectos",
     name: "The Ject",
-    tagline: "Projectos entregues a tempo, sempre",
-    desc: "Ferramenta de gestão de projectos e tarefas pensada para equipas africanas. Simples, rápida e sem a complexidade desnecessária das alternativas ocidentais.",
+    tagline: "Compre e venda projectos digitais verificados",
+    desc: "Marketplace onde empreendedores compram e vendem projectos digitais com receita verificada. Cada listagem passa por um sistema de verificação em 3 níveis — Legal, Receita e Lucro.",
     accent: "var(--purple)",
     accentRaw: "#7F77DD",
     accentSubtle: "rgba(127,119,221,0.08)",
     accentBorder: "rgba(127,119,221,0.35)",
     features: [
-      "Quadros Kanban e listas de tarefas",
-      "Gestão de equipas e permissões",
-      "Tracking de tempo por tarefa",
-      "Relatórios de progresso automáticos",
-      "Integrações com WhatsApp e email",
+      "Verificação em 3 níveis: Legal ✔ / Receita ✔✔ / Lucro ✔✔✔",
+      "Blueprint protegido por NDA — acesso só após aceitação",
+      "Deal flow exclusivo para compradores verificados",
+      "Painel de vendedor com toggle de listagem à venda",
+      "Roles distintos: Vendedor / Comprador / Admin",
     ],
     cta: { label: "Entrar em lista de espera", href: "#contacto" },
     secondary: { label: "Saber mais", href: "#contacto" },
@@ -390,23 +390,28 @@ function DigiMartMock() {
 }
 
 function TheJectMock() {
-  const cols = [
+  const listings = [
     {
-      title: "A fazer",
-      color: "var(--muted)",
-      tasks: ["Redesign homepage", "Setup DB"],
+      name: "SaaS Analytics Tool",
+      price: "$4 200",
+      badges: 3,
+      category: "SaaS",
     },
     {
-      title: "Em progresso",
-      color: "var(--amber)",
-      tasks: ["API auth", "Dashboard UI"],
+      name: "E-commerce Store MZ",
+      price: "$1 800",
+      badges: 2,
+      category: "E-commerce",
     },
     {
-      title: "Concluído",
-      color: "var(--accent)",
-      tasks: ["Wireframes", "Tech stack"],
+      name: "Newsletter Platform",
+      price: "$950",
+      badges: 1,
+      category: "Media",
     },
   ];
+  const badgeColor = ["var(--amber)", "var(--accent)", "#7F77DD"];
+
   return (
     <div
       style={{
@@ -416,6 +421,7 @@ function TheJectMock() {
         overflow: "hidden",
       }}
     >
+      {/* topbar */}
       <div
         style={{
           background: "var(--dash-bg)",
@@ -448,139 +454,168 @@ function TheJectMock() {
             marginRight: "auto",
           }}
         >
-          The Ject · Board
+          The Ject · Deal Flow
         </span>
       </div>
+
       <div style={{ padding: "1.25rem" }}>
-        {/* Progress bar */}
-        <div style={{ marginBottom: "1rem" }}>
-          <div
-            style={{
-              display: "flex",
-              justifyContent: "space-between",
-              fontSize: "0.7rem",
-              color: "var(--muted)",
-              marginBottom: "0.4rem",
-            }}
-          >
-            <span>Progresso do sprint</span>
-            <span>67%</span>
-          </div>
-          <div
-            style={{ height: 6, borderRadius: 3, background: "var(--dash-bg)" }}
-          >
+        {/* Platform stats */}
+        <div style={{ display: "flex", gap: "0.5rem", marginBottom: "1rem" }}>
+          {[
+            { val: "124", label: "Projectos", color: "#7F77DD" },
+            { val: "38", label: "Verificados", color: "var(--accent)" },
+            { val: "$2.1M", label: "Volume", color: "var(--amber)" },
+          ].map((s) => (
             <div
-              style={{
-                height: "100%",
-                width: "67%",
-                borderRadius: 3,
-                background: "#7F77DD",
-              }}
-            />
-          </div>
-        </div>
-        {/* Kanban columns */}
-        <div
-          style={{
-            display: "grid",
-            gridTemplateColumns: "repeat(3,1fr)",
-            gap: "0.5rem",
-          }}
-        >
-          {cols.map((col) => (
-            <div
-              key={col.title}
+              key={s.label}
               style={{
                 background: "var(--dash-bg)",
                 borderRadius: 8,
-                padding: "0.6rem",
+                padding: "0.65rem 0.75rem",
+                flex: 1,
+                textAlign: "center",
               }}
             >
               <div
                 style={{
-                  fontSize: "0.65rem",
-                  color: col.color,
+                  fontFamily: "var(--font-display)",
                   fontWeight: 700,
-                  textTransform: "uppercase",
-                  letterSpacing: "0.08em",
-                  marginBottom: "0.5rem",
+                  fontSize: "1rem",
+                  color: s.color,
                 }}
               >
-                {col.title}
+                {s.val}
               </div>
               <div
                 style={{
-                  display: "flex",
-                  flexDirection: "column",
-                  gap: "0.35rem",
+                  fontSize: "0.62rem",
+                  color: "var(--muted)",
+                  marginTop: "0.15rem",
+                  textTransform: "uppercase",
+                  letterSpacing: "0.05em",
                 }}
               >
-                {col.tasks.map((t) => (
-                  <div
-                    key={t}
-                    style={{
-                      background: "rgba(244,245,250,0.05)",
-                      borderRadius: 5,
-                      padding: "0.45rem 0.5rem",
-                      fontSize: "0.72rem",
-                      color: "var(--foreground)",
-                      borderLeft: `2px solid ${col.color}`,
-                    }}
-                  >
-                    {t}
-                  </div>
-                ))}
+                {s.label}
               </div>
             </div>
           ))}
         </div>
-        {/* Team row */}
+
+        {/* Filter bar */}
+        <div
+          style={{
+            display: "flex",
+            gap: "0.35rem",
+            marginBottom: "0.85rem",
+            flexWrap: "wrap",
+          }}
+        >
+          {["Todos", "Verificados", "À Venda"].map((f, i) => (
+            <span
+              key={f}
+              style={{
+                fontSize: "0.65rem",
+                fontWeight: 600,
+                padding: "0.2rem 0.55rem",
+                borderRadius: 100,
+                background: i === 0 ? "#7F77DD" : "var(--dash-bg)",
+                color: i === 0 ? "#fff" : "var(--muted)",
+                border: "1px solid " + (i === 0 ? "#7F77DD" : "var(--border)"),
+              }}
+            >
+              {f}
+            </span>
+          ))}
+        </div>
+
+        {/* Listings */}
+        <div
+          style={{ display: "flex", flexDirection: "column", gap: "0.4rem" }}
+        >
+          {listings.map((l) => (
+            <div
+              key={l.name}
+              style={{
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "space-between",
+                padding: "0.6rem 0.75rem",
+                background: "var(--dash-bg)",
+                borderRadius: 8,
+              }}
+            >
+              <div
+                style={{
+                  display: "flex",
+                  flexDirection: "column",
+                  gap: "0.18rem",
+                }}
+              >
+                <span
+                  style={{
+                    fontSize: "0.78rem",
+                    color: "var(--foreground)",
+                    fontWeight: 500,
+                  }}
+                >
+                  {l.name}
+                </span>
+                <span style={{ fontSize: "0.62rem", color: "var(--muted)" }}>
+                  {l.category}
+                </span>
+              </div>
+              <div
+                style={{ display: "flex", alignItems: "center", gap: "0.6rem" }}
+              >
+                {/* verification badges */}
+                <div style={{ display: "flex", gap: "0.18rem" }}>
+                  {Array.from({ length: 3 }).map((_, i) => (
+                    <span
+                      key={i}
+                      style={{
+                        width: 8,
+                        height: 8,
+                        borderRadius: "50%",
+                        background:
+                          i < l.badges
+                            ? badgeColor[i]
+                            : "rgba(255,255,255,0.1)",
+                        display: "inline-block",
+                      }}
+                    />
+                  ))}
+                </div>
+                <span
+                  style={{
+                    fontSize: "0.75rem",
+                    color: "#7F77DD",
+                    fontWeight: 700,
+                  }}
+                >
+                  {l.price}
+                </span>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        {/* NDA gate hint */}
         <div
           style={{
             marginTop: "0.75rem",
+            padding: "0.6rem 0.75rem",
+            background: "rgba(127,119,221,0.08)",
+            border: "1px solid rgba(127,119,221,0.25)",
+            borderRadius: 8,
             display: "flex",
             alignItems: "center",
-            justifyContent: "space-between",
-            padding: "0.5rem 0.75rem",
-            background: "var(--dash-bg)",
-            borderRadius: 7,
+            gap: "0.5rem",
           }}
         >
-          <span style={{ fontSize: "0.72rem", color: "var(--muted)" }}>
-            Equipa activa
+          <span style={{ fontSize: "0.9rem" }}>🔒</span>
+          <span style={{ fontSize: "0.7rem", color: "rgba(127,119,221,0.9)" }}>
+            Blueprint disponível após aceitação do NDA
           </span>
-          <div style={{ display: "flex", gap: "-4px" }}>
-            {["A", "B", "C"].map((l, i) => (
-              <div
-                key={i}
-                style={{
-                  width: 22,
-                  height: 22,
-                  borderRadius: "50%",
-                  background: ["#1D9E75", "#378ADD", "#7F77DD"][i],
-                  border: "2px solid #0d0b12",
-                  display: "flex",
-                  alignItems: "center",
-                  justifyContent: "center",
-                  fontSize: "0.6rem",
-                  fontWeight: 700,
-                  marginLeft: i > 0 ? -6 : 0,
-                }}
-              >
-                {l}
-              </div>
-            ))}
-            <div
-              style={{
-                fontSize: "0.68rem",
-                color: "var(--muted)",
-                marginLeft: "0.5rem",
-                lineHeight: "22px",
-              }}
-            >
-              +2
-            </div>
-          </div>
         </div>
       </div>
     </div>
