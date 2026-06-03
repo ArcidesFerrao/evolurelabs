@@ -7,6 +7,7 @@ import Process from "@/app/components/Process";
 import Stats from "@/app/components/Stats";
 import CTA from "@/app/components/CTA";
 import Footer from "@/app/components/Footer";
+import Products from "./components/Products";
 
 export default function Home() {
   return (
@@ -15,7 +16,8 @@ export default function Home() {
       <Hero />
       <Ticker />
       <Services />
-      <Spotlight />
+      <Products />
+      {/* <Spotlight /> */}
       <Process />
       <Stats />
       <CTA />
