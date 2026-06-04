@@ -46,7 +46,10 @@ const PRODUCTS = [
       "Painel de analytics e relatórios",
     ],
     cta: { label: "Entrar em lista de espera", href: "#contacto" },
-    secondary: { label: "Saber mais", href: "#contacto" },
+    secondary: {
+      label: "Ver Plataforma",
+      href: "https://digimart.evolurelabs.com",
+    },
     mock: "digimart",
   },
   {

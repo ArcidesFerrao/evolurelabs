@@ -82,7 +82,7 @@ export default function CTA() {
             }}
           >
             <a
-              href="mailto:contacto@evolurelabs.com"
+              href="https://webstudio.evolurelabs.com"
               style={{
                 background: "var(--accent)",
                 color: "#04342c",
@@ -110,7 +110,7 @@ export default function CTA() {
                 el.style.boxShadow = "";
               }}
             >
-              Enviar mensagem
+              WebStudio
               <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
                 <path
                   d="M3 8h10M9 4l4 4-4 4"
