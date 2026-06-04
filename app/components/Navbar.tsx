@@ -56,7 +56,7 @@ export default function Navbar() {
           style={{
             fontFamily: "var(--font-display)",
             fontWeight: 800,
-            fontSize: "1.3rem",
+            fontSize: "1.8rem",
             letterSpacing: "-0.02em",
             color: "var(--foreground)",
             textDecoration: "none",

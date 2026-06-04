@@ -1,4 +1,5 @@
 "use client";
+import Image from "next/image";
 
 export default function Footer() {
   return (
@@ -15,7 +16,14 @@ export default function Footer() {
         zIndex: 1,
       }}
     >
-      <div
+      <Image
+        src="/evolure-box-w.png"
+        alt="Evolure Labs"
+        width={64}
+        height={64}
+        style={{ display: "inline-block", marginRight: "0.5rem" }}
+      />
+      {/* <div
         style={{
           fontFamily: "var(--font-display)",
           fontWeight: 800,
@@ -23,7 +31,7 @@ export default function Footer() {
         }}
       >
         Evolure<span style={{ color: "var(--accent)" }}>.</span>Labs
-      </div>
+      </div> */}
 
       {/* <ul style={{ display: "flex", gap: "2rem", listStyle: "none" }}>
         {[
