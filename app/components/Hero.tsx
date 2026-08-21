@@ -51,7 +51,7 @@ export default function Hero() {
         }}
       >
         {/* Badge */}
-        <div
+        {/* <div
           className="animate-fadeup"
           style={{
             display: "inline-flex",
@@ -80,7 +80,7 @@ export default function Hero() {
             }}
           />
           Software Studio · Moçambique
-        </div>
+        </div> */}
 
         {/* H1 — controlled size, max 2 lines on mobile */}
         <h1

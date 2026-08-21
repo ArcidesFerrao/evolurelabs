@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Evolure Labs — Software que Transforma",
+  title: "Evolure Labs — Desenvolvimento de Software",
   description:
     "Desenvolvemos software personalizado que simplifica operações, acelera negócios e conecta pessoas em Moçambique e além.",
   icons: {

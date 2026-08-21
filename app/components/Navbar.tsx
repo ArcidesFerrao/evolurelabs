@@ -50,8 +50,16 @@ export default function Navbar() {
         }}
       >
         {/* Logo */}
+        <Image
+          className="inline-block md:hidden"
+          src="/favicon.png"
+          alt="Evolure Labs"
+          width={32}
+          height={32}
+          style={{ marginRight: "0.5rem" }}
+        />
         <Link
-          className="flex items-center"
+          className="hidden md:flex items-center "
           href="/"
           style={{
             fontFamily: "var(--font-display)",
@@ -130,7 +138,7 @@ export default function Navbar() {
           onClick={() => setOpen((o) => !o)}
           aria-label={open ? "Fechar menu" : "Abrir menu"}
           aria-expanded={open}
-          className="flex md:hidden items-center justify-center bg-none border-none text-var(--foreground) cursor-pointer p-1 rounded transition-opacity duration-200"
+          className="flex md:hidden items-center justify-center bg-none border-none text-var(--foreground) cursor-pointer p-1 rounded transition-opacity duration-200 "
         >
           {open ? (
             /* X icon */
