@@ -45,7 +45,10 @@ const PRODUCTS = [
       "Pagamentos via M-Pesa e transferência",
       "Painel de analytics e relatórios",
     ],
-    cta: { label: "Entrar em lista de espera", href: "#contacto" },
+    cta: {
+      label: "Criar Loja",
+      href: "https://digimart.evolurelabs.com/auth/register",
+    },
     secondary: {
       label: "Ver Plataforma",
       href: "https://digimart.evolurelabs.com",
@@ -678,14 +681,14 @@ function ProductSpotlight({
           <span
             style={{
               display: "inline-block",
-              background: product.accentSubtle,
-              border: `1px solid ${product.accentBorder}`,
+              // background: product.accentSubtle,
+              // border: `1px solid ${product.accentBorder}`,
               color: product.accent,
               fontSize: "0.72rem",
               fontWeight: 700,
               letterSpacing: "0.12em",
               textTransform: "uppercase",
-              padding: "0.3rem 0.8rem",
+              // padding: "0.3rem 0.8rem",
               borderRadius: 100,
               marginBottom: "1.2rem",
             }}
